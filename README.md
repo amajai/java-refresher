@@ -81,4 +81,61 @@ if (isTrue) { // Will passs
 double d = (double) 4.5;
 ```
 
+## 3. Conditionals
+Boolean variables to evaluate conditions.
+Example 1:
+```java
+int a = 4;
+if (a == 4) {
+    System.out.println("It is true!");
+}
+```
+Example 2:
+```java
+int a = 1;
+int b = 2;
+boolean result;
+result = a < b; // true
+result = a == b; // false
+result = a != b; // true
+result = a > b || a < b; // true
+result = !result; // false
+```
+### == and equals
+```java
+String a = new String("Wow");
+String b = new String("Wow");
+String sameA = a;
 
+boolean r1 = a == b;      // This is false, since a and b are not the same object
+boolean r2 = a.equals(b); // This is true, since a and b are logically equals
+boolean r3 = a == sameA;  // This is true, since a and sameA are really the same object
+```
+## 4. Arrays
+
+```java
+int[] arr;
+arr = new int[10];
+System.out.println(arr.length); // 10
+
+arr[0] = 4; // set value
+
+int[] arr = {1, 2, 3, 4, 5}; // assign array
+for (int i=0; i < arr.length; i++) {
+    System.out.println(arr[i]);
+}
+```
+## 5. Loops
+```java
+// for loop
+for (int i = 0; i < 3; i++) {}
+
+// while loop
+while (condition) {}
+
+// Foreach loop
+int[] arr = {2, 0, 1, 3};
+for (int el : arr) {
+    System.out.println(el);
+}
+```

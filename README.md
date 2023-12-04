@@ -16,6 +16,7 @@ Java is a high-level object-oriented language. It was developed to not be depend
 Example of a Program to print Hello World:
 ```java
 public class Main { // important base code class.
+    private String name;
     public static void main(String[] args) { // main method to run code
         System.out.println("This will be printed");
     }

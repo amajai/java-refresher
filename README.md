@@ -202,3 +202,88 @@ public class Arguments {
 javac Arguments.java
 java Arguments arg0 arg1 arg2
 ```
+
+## 8. Inheritance
+```java
+public class Animal {
+    public void sound () ________________
+    {                                    |
+        System.out.println("");          |
+    }                                    |
+}                                        |
+                                         |---- Polymorphism allows us to perform a single action in different ways
+class Dog extends Animal {               |
+    public void sound () _______________ |
+    {
+        System.out.println("Bark!");
+    }
+}
+```
+
+### Overloading
+Overloading is when multiple functions with the same name but different parameters
+```java
+class Mul {
+    static int Multiply(int a, int b)
+    {
+        return a * b;
+    }
+
+    static int Multiply(int a, int b, int c)
+    {
+        return a * b * c;
+    }
+
+    static int Multiply(int a, int b, int c, int d)
+    {
+        return a * b * c * d;
+    }
+}
+```
+
+## 9. Abstract Classes
+```java
+abstract class Shape {
+    int x, y;
+
+    Shape(int initialX, int initialY) {
+        x = initialX;
+        y = initialY;
+    }
+
+    abstract void draw();
+}
+
+class Circle extends Shape {
+    int radius;
+
+    Circle(int x, int y, int radius) {
+        super(x, y); // Invoke the constructor of the superclass (Shape)
+        this.radius = radius;
+    }
+
+    @Override
+    void draw() {
+        // Implementation of the draw method specific to Circle
+        System.out.println("Drawing a circle at coordinates (" + x + ", " + y + ") with radius " + radius);
+    }
+}
+```
+## 10. Interfaces
+```java
+interface Animal {
+    boolean feed(boolean timeToEat);
+    void groom();
+    void pet();
+}
+
+class Tiger implements Animal {
+    boolean feed(boolean timeToEat) {
+      return true
+    }
+    void groom() {
+    }
+    void pet() {
+    }
+}
+```

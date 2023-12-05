@@ -25,14 +25,16 @@ public class Main { // important base code class.
 
 In Java, every line of code needs to run inside a base class `Main`.
 
+### Function
 ```java
 public static void main(String[] args)
 ```
 - `public` - anyone can access it.
+- `private` - only the class itself can access the variable or method.
 - `static` - you can run this method without creating an instance of `Main`. Replace with `class` if its the base class
 - `void` - that this method doesn't return anything.
 - `main` - method name.
-- `String[]` - argument parameter
+- `String[]` - argument parameter (array of strings)
 - `args` - argument
 
 ## 2. Variables and type
@@ -139,4 +141,64 @@ int[] arr = {2, 0, 1, 3};
 for (int el : arr) {
     System.out.println(el);
 }
+```
+
+## 6. Object
+```java
+class Point {
+    int x;
+    int y;
+}
+
+Point p = new Point();
+```
+
+Define constructor:
+```java
+class Point {
+    int x;
+    int y;
+
+    Point(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+}
+
+Point p = new Point(1, 3); \ can add arguments
+```
+
+Defining more than one constructor:
+```java
+class Point {
+    int x;
+    int y;
+
+    Point() {
+        this(0, 0);
+    }
+
+    Point(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    Point center(Point p) {
+        return new Point((x + p.x) / 2, (y + p.y) / 2);
+    }
+}
+```
+
+## 7. Compiling and Running with Arguments
+```java
+public class Arguments {
+    public static void main(String[] args) {
+        for (int i = 0; i < args.length; i++) {
+            System.out.println(args[i]);
+        }
+    }
+}
+
+javac Arguments.java
+java Arguments arg0 arg1 arg2
 ```
